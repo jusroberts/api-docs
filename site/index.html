@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Pardot API</title>
+  <link rel="stylesheet" type="text/css" href="./syntax.css" />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+
+<div id="topbar">
+
+  <a href="#" class="brand">Pardot API</a>
+
+  <ul class="nav">
+    <li id="toc">
+      <a href="#">Table of Contents</a>
+      <div id="table-of-contents">
+          <section>
+            <a class="header" href="#d-introduction">Introduction</a>
+            <ol>
+                  <li class="sub-section"><a href="#2205489880">Authentication</a></li>
+                  <li class="sub-section"><a href="#2205486560">Request Syntax</a></li>
+                  <li class="sub-section"><a href="#2205483240">Response Format</a></li>
+            </ol>
+          </section>
+          <section>
+            <a class="header" href="#d-object-field-reference">Object Field Reference</a>
+            <ol>
+            </ol>
+          </section>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div id="container">
+  <div id="background"></div>
+    <table cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th class="docs">
+            <h1 id="d-introduction">Introduction</h1>
+          </th>
+          <th class="code">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="docs">
+              <h2 id="s-"></h2>
+
+              <p>The Pardot <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> API allows your application to access current data and perform common operations on Pardot objects, including:</p>
+
+<ul>
+<li><code>create</code> -- Creates a new object with the specified parameters.</li>
+<li><code>read</code> -- Retrieves information about the specified object.</li>
+<li><code>query</code> -- Retrieves objects that match specified criteria.</li>
+<li><code>update</code> -- Updates elements of an existing object.</li>
+<li><code>upsert</code> -- Updates elements of an existing object if it exists. If the object does not exist, one is created using the supplied parameters.</li>
+</ul>
+
+            </td>
+            <td class="code">
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-authentication">Authentication</h2>
+
+              <p>A few prerequisites must be met to successfully authenticate a connection to the API.</p>
+
+<ol>
+<li>All requests to the Pardot API must be made via SSL encrypted connection.</li>
+<li>Authentication requests must use HTTP POST.</li>
+<li>Obtain the <code>email</code>, <code>password</code>, and <code>user_key</code> (available in the application under My Settings) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact Pardot Support.</li>
+</ol>
+
+<p>API keys are valid for 1 hour. Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>To authenticate, issue the following request (having replaced the values denoted by <code>&lt;carets&gt;</code> with values for your account):</p>
+<div class="highlight"><pre>POST: https://pi.pardot.com/api/login/version/3  
+message body: email=<span class="nt">&lt;email&gt;</span><span class="err">&amp;</span>password=<span class="nt">&lt;password&gt;</span><span class="err">&amp;</span>user_key=<span class="nt">&lt;user_key&gt;</span>
+</pre></div>
+
+<p>If authentication was successful, a 32-character hexadecimal API key will be returned in the following format:</p>
+<div class="highlight"><pre><span class="nt">&lt;rsp</span> <span class="na">stat=</span><span class="s">&quot;ok&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;api_key&gt;</span>5a1698a233e73d7c8ccd60d775fbc68a<span class="nt">&lt;/api_key&gt;</span>
+<span class="nt">&lt;/rsp&gt;</span>
+</pre></div>
+
+<p>Otherwise, the response will contain the following:</p>
+<div class="highlight"><pre><span class="nt">&lt;rsp</span> <span class="na">stat=</span><span class="s">&quot;fail&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;err</span> <span class="na">code=</span><span class="s">&quot;15&quot;</span><span class="nt">&gt;</span>Login failed<span class="nt">&lt;/err&gt;</span>
+<span class="nt">&lt;/rsp&gt;</span>
+</pre></div>
+
+<table class="parameters">
+  <tbody><tr>
+    <td><strong>Parameter</strong></td>
+      <td><strong>Required</strong></td>
+      <td><strong>Description</strong></td>
+  </tr>
+  <tr>
+    <td><code>email</code></td>
+    <td>X</td>
+    <td>The email address of your user account</td>
+  </tr>
+  <tr>
+    <td><code>password</code></td>
+    <td>X</td>
+    <td>The password of your user account</td>
+  </tr>
+  <tr>
+    <td><code>user_key</code></td>
+    <td>X</td>
+    <td>The 32-bit hexadecimal user key for your user account</td>
+  </tr>
+</tbody></table>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-request-syntax">Request Syntax</h2>
+
+              <p>The Pardot API handles a variety of requests for many of the objects available through the Pardot user interface. Most requests to the API use the following standardized format. All requests must use either HTTP <code>GET</code> or <code>POST</code>. Although <code>GET</code> requests are secure due to the use of SSL, we recommend using <code>POST</code>, with sensitive or lengthy parameter values being part of the <code>POST</code> message body.</p>
+
+<p>The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with <code>?</code> indicating the start of the parameter string (for <code>GET</code> requests only) and <code>&amp;</code> as the separator between parameters. With the exception of <code>&lt;parameters_for_request&gt;</code>, all components are required. Data returned from the API is formatted using XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in XML responses may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.</p>
+
+<p>In general, the API will return XML containing a current version of the target object&#39;s data. However, unsuccessful requests will return a short response containing an error code and message.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <div class="highlight"><pre>POST: https://pi.pardot.com/api/<span class="nt">&lt;object&gt;</span>/version/3/do/<span class="nt">&lt;operator&gt;</span>/<span class="nt">&lt;identifier_field&gt;</span>/<span class="nt">&lt;identifier&gt;</span>
+message body: api_key=<span class="nt">&lt;your_api_key&gt;</span><span class="err">&amp;</span>user_key=<span class="nt">&lt;your_user_key&gt;</span><span class="err">&amp;</span><span class="nt">&lt;parameters_for_request&gt;</span>
+
+GET: https://pi.pardot.com/api/<span class="nt">&lt;object&gt;</span>/version/3/do/<span class="nt">&lt;operator&gt;</span>/<span class="nt">&lt;identifier_field&gt;</span>/<span class="nt">&lt;identifier&gt;</span>?api_key=<span class="nt">&lt;your_api_key&gt;</span><span class="err">&amp;</span>user_key=<span class="nt">&lt;your_user_key&gt;</span><span class="err">&amp;</span><span class="nt">&lt;parameters_for_request&gt;</span>
+</pre></div>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-response-format">Response Format</h2>
+
+              <p>The Pardot API supports several output formats, each of which returns different levels of detail in the XML response. Output formats are defined by specifying the <code>output</code> request parameter. Supported output formats include:</p>
+
+<ol>
+<li><code>full</code> -- Returns all supported data for the Pardot object and all objects associated with it.</li>
+<li><code>simple</code> -- Returns all supported data for the data for the Pardot object.</li>
+<li><code>mobile</code> -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.</li>
+</ol>
+
+<p>If the output request parameter is not defined, the output format defaults to <code>full</code>. See the XML Response Format sections for each object for details about the formats.</p>
+
+            </td>
+            <td class="code">
+
+            </td>
+          </tr>
+      <tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th class="docs">
+            <h1 id="d-object-field-reference">Object Field Reference</h1>
+          </th>
+          <th class="code">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="docs">
+              <h2 id="s-"></h2>
+
+              <p>The Pardot <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> API allows your application to access current data and perform common operations on Pardot objects, including:</p>
+
+<ul>
+<li><code>create</code> -- Creates a new object with the specified parameters.</li>
+<li><code>read</code> -- Retrieves information about the specified object.</li>
+<li><code>query</code> -- Retrieves objects that match specified criteria.</li>
+<li><code>update</code> -- Updates elements of an existing object.</li>
+<li><code>upsert</code> -- Updates elements of an existing object if it exists. If the object does not exist, one is created using the supplied parameters.</li>
+</ul>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p><h2>Email List</h2>
+  <table class="parameters">
+    <tr>
+      <td><strong>Field Name&nbsp;</strong></td>
+      <td><strong>Data Type&nbsp;</strong></td>
+      <td><strong>Required&nbsp;</strong></td>
+      <td><strong>Editable&nbsp;</strong></td>
+      <td><strong>Description&nbsp;</strong></td>
+    </tr>
+    <tr>
+      <td>&lt;id&gt;</td>
+      <td>integer</td>
+      <td>X</td>
+      <td></td>
+      <td>Pardot ID of this email list</td>
+    </tr>
+    <tr>
+      <td>&lt;name&gt;</td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Email list&#39;s name (internal to Pardot)</td>
+    </tr>
+    <tr>
+      <td>&lt;title&gt;</td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Email list&#39;s title (visible to subscribers)</td>
+    </tr>
+    <tr>
+      <td>&lt;description&gt;</td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Email list&#39;s description</td>
+    </tr>
+    <tr>
+      <td>&lt;created<em>at&gt;</td>
+      <td>timestamp</td>
+      <td></td>
+      <td></td>
+      <td>Time email list was created in Pardot; Time is reported in API user&#39;s preferred timezone</td>
+    </tr>
+    <tr>
+      <td>&lt;updated</em>at&gt;</td>
+      <td>timestamp</td>
+      <td></td>
+      <td></td>
+      <td>Last time email list was updated; Time is reported in API user&#39;s preferred timezone</td>
+    </tr>
+</table></p>
+
+
+            </td>
+          </tr>
+      <tbody>
+    </table>
+</div>
+</body>
+</html>

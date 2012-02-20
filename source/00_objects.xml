@@ -1,0 +1,73 @@
+<document>
+	<position>99</position>
+	<title>Object Field Reference</title>
+	<section>
+		<docs>
+			<![CDATA[
+			The Pardot [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) API allows your application to access current data and perform common operations on Pardot objects, including:
+
+			* `create` -- Creates a new object with the specified parameters.
+			* `read` -- Retrieves information about the specified object.
+			* `query` -- Retrieves objects that match specified criteria.
+			* `update` -- Updates elements of an existing object.
+			* `upsert` -- Updates elements of an existing object if it exists. If the object does not exist, one is created using the supplied parameters.
+      		]]>
+		</docs>
+		<reference>
+			<![CDATA[
+			<h2>Email List</h2>
+				<table class="parameters">
+					<tr>
+						<td><strong>Field Name&nbsp;</strong></td>
+						<td><strong>Data Type&nbsp;</strong></td>
+						<td><strong>Required&nbsp;</strong></td>
+						<td><strong>Editable&nbsp;</strong></td>
+						<td><strong>Description&nbsp;</strong></td>
+					</tr>
+					<tr>
+						<td>&lt;id&gt;</td>
+						<td>integer</td>
+						<td>X</td>
+						<td></td>
+						<td>Pardot ID of this email list</td>
+					</tr>
+					<tr>
+						<td>&lt;name&gt;</td>
+						<td>string</td>
+						<td></td>
+						<td></td>
+						<td>Email list's name (internal to Pardot)</td>
+					</tr>
+					<tr>
+						<td>&lt;title&gt;</td>
+						<td>string</td>
+						<td></td>
+						<td></td>
+						<td>Email list's title (visible to subscribers)</td>
+					</tr>
+					<tr>
+						<td>&lt;description&gt;</td>
+						<td>string</td>
+						<td></td>
+						<td></td>
+						<td>Email list's description</td>
+					</tr>
+					<tr>
+						<td>&lt;created_at&gt;</td>
+						<td>timestamp</td>
+						<td></td>
+						<td></td>
+						<td>Time email list was created in Pardot; Time is reported in API user's preferred timezone</td>
+					</tr>
+					<tr>
+						<td>&lt;updated_at&gt;</td>
+						<td>timestamp</td>
+						<td></td>
+						<td></td>
+						<td>Last time email list was updated; Time is reported in API user's preferred timezone</td>
+					</tr>
+			</table>
+			]]>	
+		</reference>
+	</section>
+</document>

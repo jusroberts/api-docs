@@ -1,0 +1,113 @@
+<document>
+	<position>1</position>
+	<title>Introduction</title>
+	<section>
+		<docs>
+			<![CDATA[
+			The Pardot [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) API allows your application to access current data and perform common operations on Pardot objects, including:
+
+			* `create` -- Creates a new object with the specified parameters.
+			* `read` -- Retrieves information about the specified object.
+			* `query` -- Retrieves objects that match specified criteria.
+			* `update` -- Updates elements of an existing object.
+			* `upsert` -- Updates elements of an existing object if it exists. If the object does not exist, one is created using the supplied parameters.
+      		]]>
+		</docs>
+	</section>
+	<section title="Authentication">
+		<docs>
+			<![CDATA[
+			A few prerequisites must be met to successfully authenticate a connection to the API.
+
+			1. All requests to the Pardot API must be made via SSL encrypted connection.
+			2. Authentication requests must use HTTP POST.
+			3. Obtain the `email`, `password`, and `user_key` (available in the application under My Settings) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact Pardot Support.
+	
+			API keys are valid for 1 hour. Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.
+
+			]]>
+		</docs>
+		<reference>
+			<![CDATA[
+			To authenticate, issue the following request (having replaced the values denoted by `<carets>` with values for your account):
+
+			```xml
+			POST: https://pi.pardot.com/api/login/version/3  
+			message body: email=<email>&password=<password>&user_key=<user_key>
+			```
+  
+			If authentication was successful, a 32-character hexadecimal API key will be returned in the following format:
+
+			```xml
+			<rsp stat="ok" version="1.0">
+				<api_key>5a1698a233e73d7c8ccd60d775fbc68a</api_key>
+			</rsp>
+			```
+
+			Otherwise, the response will contain the following:
+
+			```xml
+			<rsp stat="fail" version="1.0">
+				<err code="15">Login failed</err>
+			</rsp>
+			```
+
+			<table class="parameters">
+				<tbody><tr>
+					<td><strong>Parameter</strong></td>
+						<td><strong>Required</strong></td>
+						<td><strong>Description</strong></td>
+				</tr>
+				<tr>
+					<td><code>email</code></td>
+					<td>X</td>
+					<td>The email address of your user account</td>
+				</tr>
+				<tr>
+					<td><code>password</code></td>
+					<td>X</td>
+					<td>The password of your user account</td>
+				</tr>
+				<tr>
+					<td><code>user_key</code></td>
+					<td>X</td>
+					<td>The 32-bit hexadecimal user key for your user account</td>
+				</tr>
+			</tbody></table>
+			]]>
+		</reference>
+	</section>
+	<section title="Request Syntax">
+		<docs>
+			<![CDATA[
+			The Pardot API handles a variety of requests for many of the objects available through the Pardot user interface. Most requests to the API use the following standardized format. All requests must use either HTTP `GET` or `POST`. Although `GET` requests are secure due to the use of SSL, we recommend using `POST`, with sensitive or lengthy parameter values being part of the `POST` message body.
+
+			The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with `?` indicating the start of the parameter string (for `GET` requests only) and `&` as the separator between parameters. With the exception of `<parameters_for_request>`, all components are required. Data returned from the API is formatted using XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in XML responses may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.
+
+			In general, the API will return XML containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message.
+			]]>
+		</docs>
+		<reference>
+			<![CDATA[
+			```xml
+			POST: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>
+message body: api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>
+
+			GET: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>?api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>
+			```
+			]]>
+	</section>
+	<section title="Response Format">
+		<docs>
+			<![CDATA[
+			The Pardot API supports several output formats, each of which returns different levels of detail in the XML response. Output formats are defined by specifying the `output` request parameter. Supported output formats include:
+
+			1. `full` -- Returns all supported data for the Pardot object and all objects associated with it.
+			2. `simple` -- Returns all supported data for the data for the Pardot object.
+			3. `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
+			
+			If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
+			]]>		
+		</docs>
+	</section>
+</document>
