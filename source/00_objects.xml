@@ -4,13 +4,11 @@
 	<section>
 		<docs>
 			<![CDATA[
-			The Pardot [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) API allows your application to access current data and perform common operations on Pardot objects, including:
+			Each field returned by the API maps to a field within the Pardot user interface. The tables in this section list all fields that can be returned and/or updated via the API. Consider the following limitations:
 
-			* `create` -- Creates a new object with the specified parameters.
-			* `read` -- Retrieves information about the specified object.
-			* `query` -- Retrieves objects that match specified criteria.
-			* `update` -- Updates elements of an existing object.
-			* `upsert` -- Updates elements of an existing object if it exists. If the object does not exist, one is created using the supplied parameters.
+			* Fields marked as 'Editable' can be manipulated through `create`, `update`, and `upsert` requests.
+			* 'Required' denotes that the specified field cannot be left without a value during `insert` and some `upsert` requests. `update` requests that clear a required field will be declined.
+			* During `update` requests, the parameter names submitted to the API and tag names in the API's response will match field names within the Pardot user interface unless otherwise specified.
       		]]>
 		</docs>
 		<reference>

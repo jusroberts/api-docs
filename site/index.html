@@ -19,9 +19,21 @@
           <section>
             <a class="header" href="#d-introduction">Introduction</a>
             <ol>
-                  <li class="sub-section"><a href="#2205489880">Authentication</a></li>
-                  <li class="sub-section"><a href="#2205486560">Request Syntax</a></li>
-                  <li class="sub-section"><a href="#2205483240">Response Format</a></li>
+                  <li class="sub-section"><a href="#2231263140">Authentication</a></li>
+                  <li class="sub-section"><a href="#2231259820">Request Syntax</a></li>
+                  <li class="sub-section"><a href="#2231256500">Response Format</a></li>
+            </ol>
+          </section>
+          <section>
+            <a class="header" href="#d-prospects">Prospects</a>
+            <ol>
+                  <li class="sub-section"><a href="#2231252260">Supported Operations</a></li>
+                  <li class="sub-section"><a href="#2231249980">Querying Prospects</a></li>
+                  <li class="sub-section"><a href="#2231246660">Assigning and Reassigning Prospects</a></li>
+                  <li class="sub-section"><a href="#2231243340">Creating Prospects</a></li>
+                  <li class="sub-section"><a href="#2231240020">Updating Field Values</a></li>
+                  <li class="sub-section"><a href="#2231236700">Updating Email List Subscriptions</a></li>
+                  <li class="sub-section"><a href="#2231233380">Updating Profile Criteria Matching Statuses</a></li>
             </ol>
           </section>
           <section>
@@ -80,13 +92,15 @@
 
 <p>API keys are valid for 1 hour. Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.</p>
 
+<p>Unless otherwise specified, an <code>&lt;api_key&gt;</code> and a <code>&lt;user_key&gt;</code> must be included in all requests.</p>
+
             </td>
             <td class="code">
                 <h2 id="r-"></h2>
                 <p>To authenticate, issue the following request (having replaced the values denoted by <code>&lt;carets&gt;</code> with values for your account):</p>
-<div class="highlight"><pre>POST: https://pi.pardot.com/api/login/version/3  
-message body: email=<span class="nt">&lt;email&gt;</span><span class="err">&amp;</span>password=<span class="nt">&lt;password&gt;</span><span class="err">&amp;</span>user_key=<span class="nt">&lt;user_key&gt;</span>
-</pre></div>
+
+<p><code>POST: https://pi.pardot.com/api/login/version/3</code>
+<code>message body: email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;</code></p>
 
 <p>If authentication was successful, a 32-character hexadecimal API key will be returned in the following format:</p>
 <div class="highlight"><pre><span class="nt">&lt;rsp</span> <span class="na">stat=</span><span class="s">&quot;ok&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
@@ -139,11 +153,10 @@ message body: email=<span class="nt">&lt;email&gt;</span><span class="err">&amp;
             </td>
             <td class="code">
                 <h2 id="r-"></h2>
-                <div class="highlight"><pre>POST: https://pi.pardot.com/api/<span class="nt">&lt;object&gt;</span>/version/3/do/<span class="nt">&lt;operator&gt;</span>/<span class="nt">&lt;identifier_field&gt;</span>/<span class="nt">&lt;identifier&gt;</span>
-message body: api_key=<span class="nt">&lt;your_api_key&gt;</span><span class="err">&amp;</span>user_key=<span class="nt">&lt;your_user_key&gt;</span><span class="err">&amp;</span><span class="nt">&lt;parameters_for_request&gt;</span>
+                <p><code>POST: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;identifier_field&gt;/&lt;identifier&gt;</code>
+<code>message body: api_key=&lt;your_api_key&gt;&amp;user_key=&lt;your_user_key&gt;&amp;&lt;parameters_for_request&gt;</code></p>
 
-GET: https://pi.pardot.com/api/<span class="nt">&lt;object&gt;</span>/version/3/do/<span class="nt">&lt;operator&gt;</span>/<span class="nt">&lt;identifier_field&gt;</span>/<span class="nt">&lt;identifier&gt;</span>?api_key=<span class="nt">&lt;your_api_key&gt;</span><span class="err">&amp;</span>user_key=<span class="nt">&lt;your_user_key&gt;</span><span class="err">&amp;</span><span class="nt">&lt;parameters_for_request&gt;</span>
-</pre></div>
+<p><code>GET: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;identifier_field&gt;/&lt;identifier&gt;?api_key=&lt;your_api_key&gt;&amp;user_key=&lt;your_user_key&gt;&amp;&lt;parameters_for_request&gt;</code></p>
 
 
             </td>
@@ -173,6 +186,142 @@ GET: https://pi.pardot.com/api/<span class="nt">&lt;object&gt;</span>/version/3/
       <thead>
         <tr>
           <th class="docs">
+            <h1 id="d-prospects">Prospects</h1>
+          </th>
+          <th class="code">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="docs">
+              <h2 id="s-supported-operations">Supported Operations</h2>
+
+              <p>All operations requre that an <code>&lt;api_key&gt;</code> and a <code>&lt;user_key&gt;</code> be specified. Note that <code>&lt;email&gt;</code> and <code>&lt;id&gt;</code> refer to the prospect&#39;s email address and Pardot ID.</p>
+
+<ul>
+<li><code>query</code> -- Returns all prospects matching the specified criteria parameters</li>
+<li><code>assign</code> -- Assigns or reassigns the prospect to a Pardot user or group</li>
+<li><code>unassign</code> -- Unassigns the prospect from the assigned user or gruop</li>
+<li><code>create</code> -- Creates a new prospect</li>
+<li><code>read</code> -- Returns data for a specific prospect</li>
+<li><code>update</code> -- Updates the provided data for a prospect</li>
+<li><code>upsert</code> -- Updates the provided data for a prospect, or creates a new prospect with the provided information if one does not yet exist</li>
+</ul>
+
+            </td>
+            <td class="code">
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-querying-prospects">Querying Prospects</h2>
+
+              <p>Returns prospects matching the specified criteria parameters.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>Return prospects with a score greater than 100.  </p>
+
+<p><code>/query/score_greater_than=100</code></p>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-assigning-and-reassigning-prospects">Assigning and Reassigning Prospects</h2>
+
+              <p>To <code>assign</code> or reassign a prospect, both the prospect to be assigned and the target user or group of the assignment must be defined. Prospects can be specified by their Pardot ID or email address. Users or groups can be specified by their Pardot user ID, email address, or Pardot group ID.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>Assign a prospect specified by their email address to a Pardot user, also specified by email address. 
+<code>/assign/email/&lt;prospect_email&gt;?user_email=&lt;user_email&gt;</code></p>
+
+<p>Assign a prospect specified by their Pardot <code>&lt;prospect_id&gt;</code> to a Pardot user group, specified by the <code>&lt;group_id&gt;</code>.</p>
+
+<p><code>/assign/id/&lt;prospect_id&gt;?group_id=&lt;group_id&gt;</code></p>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-creating-prospects">Creating Prospects</h2>
+
+              <p>To create a propsect via the API, only a valid and unique email address are required. Values for any other prospect fields may also be provided in the <code>create</code> request.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>Create a new prospet with email address <code>new_prospect@pardot.com</code>, and  specify the prospect&#39;s <code>first_name</code> and <code>last_name</code>.      </p>
+
+<p><code>/create/email/new_prospect@pardot.com?first_name=New&amp;last_name=Prospect</code></p>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-updating-field-values">Updating Field Values</h2>
+
+              <p>Modifying values of prospect data fields is done by submitting an update request with parameters for each field to be updated. Each parameter is formatted as <code>&lt;field_name&gt;=&lt;value&gt;</code>. Custom field values are updated using the same syntax.</p>
+
+<p>Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an update request containing a parameter with no specified value, such as <code>phone=</code>.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>Update the phone number of a prospect whose email address is <code>bob@pardot.com</code>.</p>
+
+<p><code>/update/email/bob@pardot.com?phone=888-123-4567</code></p>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-updating-email-list-subscriptions">Updating Email List Subscriptions</h2>
+
+              <p>To modify email list subscriptions for a prospect, the Pardot ID of the email list is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>list_&lt;list_id&gt;=1</code> to create a subscription and <code>list_&lt;list_id&gt;=0</code> to end a subscription. You can find the Pardot list ID by navigating to the list via the web interface and observing the last portion of the page URL.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>Add a prospect whose email address is <code>bob@pardot.com</code> to an email list with ID <code>8</code>.</p>
+
+<p><code>/update/email/bob@pardot.com?list_8=1</code></p>
+
+
+            </td>
+          </tr>
+          <tr>
+            <td class="docs">
+              <h2 id="s-updating-profile-criteria-matching-statuses">Updating Profile Criteria Matching Statuses</h2>
+
+              <p>To modify a prospect&#39;s matching status for associated profile criteria, the Pardot ID of the profile criteria is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>profile_criteria_&lt;profile_criteria_id&gt;=&lt;status&gt;</code>. The value of <code>&lt;status&gt;</code> may be either <code>match</code>, <code>nomatch</code>, or <code>unknown</code>.</p>
+
+<p>Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored.</p>
+
+            </td>
+            <td class="code">
+                <h2 id="r-"></h2>
+                <p>Set a profile criteria with id <code>8</code> for a prospect whose email address is <code>bob@pardot.com</code> to <code>match</code>.</p>
+
+<p><code>/update/email/bob@pardot.com?profile_criteria_8=match</code></p>
+
+
+            </td>
+          </tr>
+      <tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th class="docs">
             <h1 id="d-object-field-reference">Object Field Reference</h1>
           </th>
           <th class="code">&nbsp;</th>
@@ -183,14 +332,12 @@ GET: https://pi.pardot.com/api/<span class="nt">&lt;object&gt;</span>/version/3/
             <td class="docs">
               <h2 id="s-"></h2>
 
-              <p>The Pardot <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> API allows your application to access current data and perform common operations on Pardot objects, including:</p>
+              <p>Each field returned by the API maps to a field within the Pardot user interface. The tables in this section list all fields that can be returned and/or updated via the API. Consider the following limitations:</p>
 
 <ul>
-<li><code>create</code> -- Creates a new object with the specified parameters.</li>
-<li><code>read</code> -- Retrieves information about the specified object.</li>
-<li><code>query</code> -- Retrieves objects that match specified criteria.</li>
-<li><code>update</code> -- Updates elements of an existing object.</li>
-<li><code>upsert</code> -- Updates elements of an existing object if it exists. If the object does not exist, one is created using the supplied parameters.</li>
+<li>Fields marked as &#39;Editable&#39; can be manipulated through <code>create</code>, <code>update</code>, and <code>upsert</code> requests.</li>
+<li>&#39;Required&#39; denotes that the specified field cannot be left without a value during <code>insert</code> and some <code>upsert</code> requests. <code>update</code> requests that clear a required field will be declined.</li>
+<li>During <code>update</code> requests, the parameter names submitted to the API and tag names in the API&#39;s response will match field names within the Pardot user interface unless otherwise specified.</li>
 </ul>
 
             </td>

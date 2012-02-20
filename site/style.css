@@ -70,10 +70,10 @@ table.parameters {
 	border-top: 1px solid #AAA;
 	border-bottom: 1px solid #AAA;
 }
-  .parameters td {
-    border-top: 1px solid #CCC;
-    padding: 2px;
-  }
+.parameters td {
+	border-top: 1px solid #CCC;
+	padding: 2px;
+}
 table td {
   border: 0;
   outline: 0;

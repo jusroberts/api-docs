@@ -25,16 +25,15 @@
 	
 			API keys are valid for 1 hour. Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.
 
+			Unless otherwise specified, an `<api_key>` and a `<user_key>` must be included in all requests.
 			]]>
 		</docs>
 		<reference>
 			<![CDATA[
 			To authenticate, issue the following request (having replaced the values denoted by `<carets>` with values for your account):
 
-			```xml
-			POST: https://pi.pardot.com/api/login/version/3  
-			message body: email=<email>&password=<password>&user_key=<user_key>
-			```
+			`POST: https://pi.pardot.com/api/login/version/3`
+			`message body: email=<email>&password=<password>&user_key=<user_key>`
   
 			If authentication was successful, a 32-character hexadecimal API key will be returned in the following format:
 
@@ -89,12 +88,10 @@
 		</docs>
 		<reference>
 			<![CDATA[
-			```xml
-			POST: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>
-message body: api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>
+			`POST: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>`
+			`message body: api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>`
 
-			GET: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>?api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>
-			```
+			`GET: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>?api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>`
 			]]>
 	</section>
 	<section title="Response Format">
