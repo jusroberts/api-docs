@@ -759,12 +759,12 @@
 <h2 id="assigning-and-reassigning-prospects"><a href="#assigning-and-reassigning-prospects-"></a>Assigning and Reassigning Prospects</h2>
 <p>To assign/reassign a prospect, both the prospect to be assigned and the target user or group of the assignment must be defined. Prospects can be specified by their Pardot ID or email address. Users or groups can be specified by their Pardot user ID, email address, or Pardot group ID. Possible combinations of parameters are shown below. Developers are responsible for substituting specific values for parameters denoted by <code>&lt;carets&gt;</code>.</p>
 <p><strong><em>Examples:</em></strong></p>
-<p>/api/prospect/version/3/do/assign/email/?user_email=&amp;api_key=&amp;user_key=
-/api/prospect/version/3/do/assign/email/?user_id=&amp;api_key=&amp;user_key=
-/api/prospect/version/3/do/assign/email/?group_id=&amp;api_key=&amp;user_key=
-/api/prospect/version/3/do/assign/id/?user_email=&amp;api_key=&amp;user_key=
-/api/prospect/version/3/do/assign/id/?user_id=&amp;api_key=&amp;user_key=
-/api/prospect/version/3/do/assign/id/?group_id=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/email/?user_email=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/email/?user_id=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/email/?group_id=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/id/?user_email=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/id/?user_id=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/id/?group_id=&amp;api_key=&amp;user_key=</p>
 <p>XML responses to <code>assign</code> requests are identical to <code>read</code> requests, but reflect the new prospect assignment in the <code>&lt;assigned_to&gt;</code> node.</p>
 <p><a name="14833-creating-prospects" id="creating-prospects"></a></p>
 <h2 id="creating-prospects"><a href="#creating-prospects-"></a>Creating Prospects</h2>
