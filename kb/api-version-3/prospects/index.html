@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="../../../favicon.ico">
         
 
-        <title>Prospects - Pardot API Documentation</title>
+        <title>Prospects</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -51,6 +51,12 @@
             <ul class="nav navbar-nav">
             
                 
+                    <li >
+                        <a href="../../..">Overview</a>
+                    </li>
+                
+            
+                
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -60,11 +66,11 @@
                             </li>
                         
                             <li >
-                                <a href="../object-field-references">Object Field References</a>
+                                <a href="../object-field-references/">Object Field References</a>
                             </li>
                         
                             <li >
-                                <a href="../error-codes-messages">Error Codes & Messages</a>
+                                <a href="../error-codes-messages/">Error Codes & Messages</a>
                             </li>
                         
                         </ul>
@@ -77,83 +83,83 @@
                         <ul class="dropdown-menu">
                         
                             <li >
-                                <a href="../campaigns">Campaigns</a>
+                                <a href="../campaigns/">Campaigns</a>
                             </li>
                         
                             <li >
-                                <a href="../custom-fields">Custom Fields</a>
+                                <a href="../custom-fields/">Custom Fields</a>
                             </li>
                         
                             <li >
-                                <a href="../custom-redirects">Custom Redirects</a>
+                                <a href="../custom-redirects/">Custom Redirects</a>
                             </li>
                         
                             <li >
-                                <a href="../dynamic-content">Dynamic Content</a>
+                                <a href="../dynamic-content/">Dynamic Content</a>
                             </li>
                         
                             <li >
-                                <a href="../emails">Email</a>
+                                <a href="../emails/">Email</a>
                             </li>
                         
                             <li >
-                                <a href="../email-templates">Email Templates</a>
+                                <a href="../email-templates/">Email Templates</a>
                             </li>
                         
                             <li >
-                                <a href="../forms">Forms</a>
+                                <a href="../forms/">Forms</a>
                             </li>
                         
                             <li >
-                                <a href="../lifecycle-histories">Lifecycle Histories</a>
+                                <a href="../lifecycle-histories/">Lifecycle Histories</a>
                             </li>
                         
                             <li >
-                                <a href="../lifecycle-stages">Lifecycle Stages</a>
+                                <a href="../lifecycle-stages/">Lifecycle Stages</a>
                             </li>
                         
                             <li >
-                                <a href="../lists">Lists</a>
+                                <a href="../lists/">Lists</a>
                             </li>
                         
                             <li >
-                                <a href="../list-memberships">List Memberships</a>
+                                <a href="../list-memberships/">List Memberships</a>
                             </li>
                         
                             <li >
-                                <a href="../opportunities">Opportunities</a>
+                                <a href="../opportunities/">Opportunities</a>
                             </li>
                         
                             <li class="active">
-                                <a href=".">Prospects</a>
+                                <a href="./">Prospects</a>
                             </li>
                         
                             <li >
-                                <a href="../prospect-accounts">Prospect Accounts</a>
+                                <a href="../prospect-accounts/">Prospect Accounts</a>
                             </li>
                         
                             <li >
-                                <a href="../tags">Tags</a>
+                                <a href="../tags/">Tags</a>
                             </li>
                         
                             <li >
-                                <a href="../tag-objects">TagObjects</a>
+                                <a href="../tag-objects/">TagObjects</a>
                             </li>
                         
                             <li >
-                                <a href="../users">Users</a>
+                                <a href="../users/">Users</a>
                             </li>
                         
                             <li >
-                                <a href="../visitors">Visitors</a>
+                                <a href="../visitors/">Visitors</a>
                             </li>
                         
                             <li >
-                                <a href="../visitor-activities">Visitor Activities</a>
+                                <a href="../visitor-activities/">Visitor Activities</a>
                             </li>
                         
                             <li >
-                                <a href="../visits">Visits</a>
+                                <a href="../visits/">Visits</a>
                             </li>
                         
                         </ul>
@@ -167,14 +173,14 @@
                 
                 
                 <li>
-                    <a rel="next" href="../opportunities">
+                    <a rel="next" href="../opportunities/">
                     <i class="fa fa-arrow-left"></i> Opportunities
                     </a>
                 </li>
                 
                 
                 <li>
-                    <a rel="prev" href="../prospect-accounts">
+                    <a rel="prev" href="../prospect-accounts/">
                     Prospect Accounts <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -200,6 +206,8 @@
     
         <li class="main active"><a href="#querying-prospects">Querying Prospects</a></li>
         
+            <li><a href="#supported-operations">Supported Operations</a></li>
+        
             <li><a href="#supported-search-criteria">Supported Search Criteria</a></li>
         
             <li><a href="#manipulating-the-result-set">Manipulating the Result Set</a></li>
@@ -211,11 +219,15 @@
     
         <li class="main "><a href="#using-prospects">Using Prospects</a></li>
         
+            <li><a href="#supported-operations_1">Supported Operations</a></li>
+        
             <li><a href="#xml-response-formats">XML Response Formats</a></li>
         
             <li><a href="#assigning-and-reassigning-prospects">Assigning and Reassigning Prospects</a></li>
         
             <li><a href="#creating-prospects">Creating Prospects</a></li>
+        
+            <li><a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></li>
         
             <li><a href="#updating-field-values">Updating Field Values</a></li>
         
@@ -250,7 +262,7 @@
 <td><code>query</code></td>
 <td><code>/api/prospect/version/3/do/query?...</code></td>
 <td><code>user_key, api_key</code></td>
-<td>Returns the prospects matching the specified criteria parameters. See [Using Prospects (using-prospects) for complete descriptions of prospect <a href="../../../using-prospects#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Returns the prospects matching the specified criteria parameters. See [Using Prospects (using-prospects) for complete descriptions of prospect <a href="../using-prospects#xml-response-formats">XML Response Formats</a>. Also see <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -336,19 +348,19 @@
 <td><code>last_activity_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that have been active before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code> is before the specified time. See <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Selects prospects that have been active before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code> is before the specified time. See <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>last_activity_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that have been active after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code> is after the specified time. See <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Selects prospects that have been active after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code> is after the specified time. See <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>last_activity_never</code></td>
 <td><code>boolean</code></td>
 <td><code>TRUE</code></td>
-<td>Selects prospects that have never been active. Prospects are considered active if a prospect's <code>last_activity_at</code> is null. See <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Selects prospects that have never been active. Prospects are considered active if a prospect's <code>last_activity_at</code> is null. See <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>list_id</code></td>
@@ -360,7 +372,7 @@
 <td><code>new</code></td>
 <td><code>boolean</code></td>
 <td><code>true, false</code></td>
-<td>Selects prospects based on whether they are classified as new. Prospects are considered new if they have not been assigned to a user or a queue, have not been marked as reviewed, and have a <code>last_activity_at</code> timestamp specified. See <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>. Note: Using the new criteria overrides the <code>assigned</code>, <code>assigned_to_user</code>, <code>last_activity_at</code>, and <code>last_activity_before</code> criteria if specified.</td>
+<td>Selects prospects based on whether they are classified as new. Prospects are considered new if they have not been assigned to a user or a queue, have not been marked as reviewed, and have a <code>last_activity_at</code> timestamp specified. See <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>. Note: Using the new criteria overrides the <code>assigned</code>, <code>assigned_to_user</code>, <code>last_activity_at</code>, and <code>last_activity_before</code> criteria if specified.</td>
 </tr>
 <tr>
 <td><code>score_equal_to</code></td>
@@ -428,7 +440,7 @@
 <td><code>output</code></td>
 <td><code>string</code></td>
 <td><code>simple, mobile</code></td>
-<td>Specifies the format to be used when returning the results of the query. See <a href="../../../using-prospects#xml-response-formats">XML Response Formats</a> in <a href="../../../using-prospects">Using Prospects</a> for more details.</td>
+<td>Specifies the format to be used when returning the results of the query. See <a href="../using-prospects#xml-response-formats">XML Response Formats</a> in <a href="../using-prospects">Using Prospects</a> for more details.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
@@ -445,7 +457,7 @@
 </tbody>
 </table>
 <h2 id="supported-sorting-options"><a href="#supported-sorting-options-"></a>Supported Sorting Options</h2>
-<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in Prospect queries, see <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
+<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in Prospect queries, see <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
@@ -505,13 +517,13 @@
 </tr>
 <tr>
 <td><code>&lt;prospect&gt;</code></td>
-<td>The data for an individual Prospect. See <a href="../../../using-prospects">Using Prospects</a> for complete descriptions of prospect <a href="../../../using-prospects#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a <code>query</code> response. To retrieve this data, submit a <code>read</code> request for the prospect of interest.</td>
+<td>The data for an individual Prospect. See <a href="../using-prospects">Using Prospects</a> for complete descriptions of prospect <a href="../using-prospects#xml-response-formats">XML Response Formats</a>. Also see <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a <code>query</code> response. To retrieve this data, submit a <code>read</code> request for the prospect of interest.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="using-prospects">Using Prospects</h1>
 <h2 id="supported-operations_1"><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="14833-supported-operations" id="supported-operations"></a></h2>
-<p>For a complete list of fields involved in Prospect operations, see the <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> section of <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
+<p>For a complete list of fields involved in Prospect operations, see the <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> section of <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <p>Note: Prospect email addresses cannot be updated using this method.</p>
 <table>
 <thead>
@@ -554,6 +566,12 @@
 <td>Creates a new prospect using the specified data. <code>&lt;email&gt;</code> must be a unique email address. Email list subscriptions and custom field data may also be added with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details.</td>
 </tr>
 <tr>
+<td><code>batchCreate</code></td>
+<td><code>/api/prospect /version/3 /do/batchCreate? prospects=&lt;data&gt;...</code></td>
+<td><code>user_key, api_key, prospects</code></td>
+<td>Creates new prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
+</tr>
+<tr>
 <td><code>read</code></td>
 <td><code>/api/prospect /version/3 /do/read/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
@@ -578,6 +596,12 @@
 <td>Updates the provided data for a prospect specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
 </tr>
 <tr>
+<td><code>batchUpdate</code></td>
+<td><code>/api/prospect /version/3 /do/batchUpdate? prospects=&lt;data&gt;...</code></td>
+<td><code>user_key, api_key, prospects</code></td>
+<td>Updates prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
+</tr>
+<tr>
 <td><code>upsert</code></td>
 <td><code>/api/prospect /version/3 /do/upsert/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
@@ -588,6 +612,12 @@
 <td><code>/api/prospect /version/3 /do/upsert/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, (id OR email)</code></td>
 <td>Updates the provided data for the prospect specified by <code>&lt;id&gt;</code>. If an <code>&lt;email&gt;</code> value is provided, it is used to update the prospect's email address. If a prospect with the provided ID is not found, Pardot searches for a prospect identified by <code>&lt;email&gt;</code>. If a prospect with the provided email address does not yet exist, a new prospect is created using <code>&lt;email&gt;</code> value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
+</tr>
+<tr>
+<td><code>batchUpsert</code></td>
+<td><code>/api/prospect /version/3 /do/batchUpsert? prospects=&lt;data&gt;...</code></td>
+<td><code>user_key, api_key, prospects</code></td>
+<td>Updates prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
 </tr>
 <tr>
 <td><code>delete</code></td>
@@ -691,7 +721,7 @@
 <tbody>
 <tr>
 <td><code>&lt;prospect&gt;</code></td>
-<td>Parent tag. Contains data fields for the target prospect (including custom fields). For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Parent tag. Contains data fields for the target prospect (including custom fields). For complete field listing, see <a href="../kb/api-version-3/object-field-references#prospect">Prospect</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;value&gt;</code></td>
@@ -703,19 +733,19 @@
 </tr>
 <tr>
 <td><code>&lt;assigned_to&gt;</code></td>
-<td>Contains a <code>&lt;user&gt;</code> node detailing the user to whom this prospect has been assigned. This leaf only appears if the prospect has been assigned to a user. See <a href="../../../kb/api-version-3/object-field-references#user">User</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains a <code>&lt;user&gt;</code> node detailing the user to whom this prospect has been assigned. This leaf only appears if the prospect has been assigned to a user. See <a href="../kb/api-version-3/object-field-references#user">User</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;last_activity&gt;</code></td>
-<td>Contains a <code>&lt;visitor_activity&gt;</code> node detailing this prospect's most recent activity. This leaf only appears if the prospect has visitor activities associated with it. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains a <code>&lt;visitor_activity&gt;</code> node detailing this prospect's most recent activity. This leaf only appears if the prospect has visitor activities associated with it. For complete field listing, see <a href="../kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;profile&gt;</code></td>
-<td>Contains all data fields for the profile associated with this prospect. Also contains several <code>&lt;profile_criteria&gt;</code> tags. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#profile">Profile</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References.</a></td>
+<td>Contains all data fields for the profile associated with this prospect. Also contains several <code>&lt;profile_criteria&gt;</code> tags. For complete field listing, see <a href="../kb/api-version-3/object-field-references#profile">Profile</a> in <a href="../kb/api-version-3/object-field-references">Object Field References.</a></td>
 </tr>
 <tr>
 <td><code>&lt;profile_criteria&gt;</code></td>
-<td>Contains all data fields for the profile criteria associated with the prospect's assigned profile. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#profile-criteria">Profile Criteria</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains all data fields for the profile criteria associated with the prospect's assigned profile. For complete field listing, see <a href="../kb/api-version-3/object-field-references#profile-criteria">Profile Criteria</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;visitors&gt;</code></td>
@@ -723,15 +753,15 @@
 </tr>
 <tr>
 <td><code>&lt;visitor&gt;</code></td>
-<td>Contains data fields for a visitor activity, as well as an <code>&lt;identified_company&gt;</code> and a <code>&lt;visitor_referrer&gt;</code> tag. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor">Visitor</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor activity, as well as an <code>&lt;identified_company&gt;</code> and a <code>&lt;visitor_referrer&gt;</code> tag. For complete field listing, see <a href="../kb/api-version-3/object-field-references#visitor">Visitor</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;identified_company&gt;</code></td>
-<td>Contains data field for a visitor's identified company. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#identified-company">Identified Company</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains data field for a visitor's identified company. For complete field listing, see <a href="../kb/api-version-3/object-field-references#identified-company">Identified Company</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor_referrer&gt;</code></td>
-<td>Contains data fields for a visitor's referrer. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor-referrer">Visitor Referrer</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor's referrer. For complete field listing, see <a href="../kb/api-version-3/object-field-references#visitor-referrer">Visitor Referrer</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor_activities&gt;</code></td>
@@ -739,7 +769,7 @@
 </tr>
 <tr>
 <td><code>&lt;visitor_activity&gt;</code></td>
-<td>Contains data fields for a visitor activity. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor activity. For complete field listing, see <a href="../kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;lists&gt;</code></td>
@@ -747,11 +777,11 @@
 </tr>
 <tr>
 <td><code>&lt;list_subscription&gt;</code></td>
-<td>Contains data fields for an email list subscription, as well as a <code>&lt;list&gt;</code> tag. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#email-list-subscription">Email List Subscription</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for an email list subscription, as well as a <code>&lt;list&gt;</code> tag. For complete field listing, see <a href="../kb/api-version-3/object-field-references#email-list-subscription">Email List Subscription</a> in <a href="../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;list&gt;</code></td>
-<td>Contains data fields for an email list. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#email-list">Email List</a> in <a href="../../../.. object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for an email list. For complete field listing, see <a href="../kb/api-version-3/object-field-references#email-list">Email List</a> in <a href="../.. object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -772,6 +802,52 @@
 <p><em><strong>Example:</strong> Creating a new prospect</em>/api/prospect/version/3/do/create/email/<a href="mailto:new_prospect@pardot.com">new_prospect@pardot.com</a>?first_name=New&amp;last_name=Prospect&amp;api_key=&amp;user_key=</p>
 <p>XML responses to <code>create</code> requests are identical to <code>update</code> and <code>read</code> requests. If no <code>campaign_id</code> value is provided, the new prospect will be automatically assigned to the oldest existing campaign.</p>
 <p><a name="14833-updating-field-values" id="updating-field-values"></a></p>
+<h2 id="endpoints-for-batch-processing"><a href="#enpoints-batch-processing-"></a>Endpoints for Batch Processing</h2>
+<p>There are 3 endpoints available for batch processing up to 50 prospects at a time:</p>
+<p>/api/prospect/version/3/do/batchCreate</p>
+<p>/api/prospect/version/3/do/batchUpdate</p>
+<p>/api/prospect/version/3/do/batchUpsert</p>
+<p>These endpoints expect a query variable called "prospects" which holds either JSON or XML encoded data.</p>
+<p>JSON Example:</p>
+<pre><code>{
+    &quot;prospects&quot;: {
+        &quot;1234&quot;: {
+            &quot;first_name&quot;: &quot;New first name&quot;,
+            &quot;last_name&quot;: &quot;New last name&quot;
+        },
+        &quot;some@email.com&quot;: {
+            &quot;first_name&quot;: &quot;New first name&quot;,
+            &quot;last_name&quot;: &quot;New last name&quot;
+        },
+            &quot;some.other@email.com&quot;: {
+            &quot;first_name&quot;: &quot;New first name&quot;,
+            &quot;last_name&quot;: &quot;New last name&quot;
+        }
+    }
+}
+</code></pre>
+
+<p>XML Example:</p>
+<pre><code>&lt;prospects&gt;
+    &lt;prospect identifier=&quot;1234&quot;&gt;
+        &lt;first_name&gt;New first name&lt;/first_name&gt;
+        &lt;last_name&gt;New last name&lt;/last_name&gt;
+    &lt;/prospect&gt;
+    &lt;prospect identifier=&quot;some@email.com&quot;&gt;
+        &lt;first_name&gt;New first name&lt;/first_name&gt;
+        &lt;last_name&gt;New last name&lt;/last_name&gt;
+    &lt;/prospect&gt;
+    &lt;prospect identifier=&quot;some.other@email.com&quot;&gt;
+        &lt;first_name&gt;New first name&lt;/first_name&gt;
+        &lt;last_name&gt;New last name&lt;/last_name&gt;
+    &lt;/prospect&gt;
+&lt;/prospects&gt;
+</code></pre>
+
+<p>If using <code>batchCreate</code>, you'll need to provide a valid and unique email address for each prospect. The <code>batchUpdate</code> and <code>batchUpsert</code> endpoints allow the use of a prospect ID or prospect email address.</p>
+<p><strong><em>Example:</em></strong></p>
+<p>/api/prospect/version/3/do/batchUpdate?prospects={"prospects":{"some@email.com":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}&amp;api_key=&amp;user_key=</p>
+<p><strong>Note:</strong> The return value will either be XML or JSON (XML by default. If you want JSON, then add "&amp;format=json" to your HTTP query).</p>
 <h2 id="updating-field-values"><a href="#updating-field-values-"></a>Updating Field Values</h2>
 <p>Modifying values of prospect data fields is done by submitting an <code>update</code> request with parameters for each field to be updated. Each parameter is formatted as <code>&lt;field_name&gt;=&lt;value&gt;</code>. Custom field values are updated using the same syntax.</p>
 <p><em><strong>Example:</strong> Updating the phone number of a prospect whose email address is</em> <code>bob@pardot.com</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?phone=888-123-4567&amp;api_key=&amp;user_key=</p>
@@ -795,13 +871,12 @@
 <h2 id="updating-profile-criteria-matching-statuses"><a href="#updating-profile-criteria-matching-statuses-"></a>Updating Profile Criteria Matching Statuses</h2>
 <p>To modify a prospect's matching status for associated profile criteria, the Pardot ID of the profile criteria is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>profile_criteria_&lt;profile_criteria_id&gt;=&lt;status&gt;</code>. The value of <code>&lt;status&gt;</code> may be either <code>match</code>, <code>nomatch</code>, or <code>unknown</code>.</p>
 <p><em><strong>Example:</strong> Setting a profile criteria for a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to</em> <code>match</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?profile_criteria_8=match&amp;api_key=&amp;user_key=<em><strong>Example:</strong> Setting a profile criteria for a prospect with Pardot ID</em> <code>58</code> <em>to</em> <code>nomatch</code>: /api/prospect/version/3/do/update/id/58?profile_criteria_8=nomatch&amp;api_key=&amp;user_key=</p>
-<p>Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than <code>match</code>, <code>nomatch</code>, or <code>unknown</code> will result in an error message. See <a href="../../../kb/api-version-3/error-codes-and-messages">Error Codes &amp; Messages</a> for details.</p>
+<p>Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than <code>match</code>, <code>nomatch</code>, or <code>unknown</code> will result in an error message. See <a href="../kb/api-version-3/error-codes-and-messages">Error Codes &amp; Messages</a> for details.</p>
 <p><a name="14833-updating-prospect-account-matching-statuses" id="updating-prospect-account-matching-statuses"></a></p>
 <h2 id="updating-prospect-account-associations"><a href="#updating-prospect-account-associations-"></a>Updating Prospect Account Associations</h2>
 <p>To modify a prospect's matching status for associated prospect account, the Pardot ID of the prospect account is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>prospect_account_id=&lt;id&gt;</code>.</p>
 <p><em><strong>Example:</strong> Setting a prospect account for a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to</em> <code>match</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?prospect_account_id=&amp;api_key=&amp;user_key=</p>
-<p>A prospect account with the id must exist, and can not be set if a CRM connector is set up in the account.</p>
-</div>
+<p>A prospect account with the id must exist, and can not be set if a CRM connector is set up in the account.</p></div>
         </div>
 
         
