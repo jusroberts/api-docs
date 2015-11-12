@@ -266,13 +266,13 @@
 <td><code>created_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month,&lt;custom_time&gt;</code></td>
-<td>Selects opportunities that were created after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input formats.html">GNU Date Input Syntax</a>.</td>
+<td>Selects opportunities that were created after the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input formats.html">GNU Date Input Syntax</a>.</td>
 </tr>
 <tr>
 <td><code>created_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects opportunities that were created before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+<td>Selects opportunities that were created before the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
 </tr>
 <tr>
 <td><code>id_greater_than</code></td>
@@ -301,13 +301,13 @@
 <tr>
 <td><code>prospect_email</code></td>
 <td><code>string</code></td>
-<td>Selects opportunities associated with the specified prospect. <code>prospect_email</code> must correspond to an existing prospect. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Selects opportunities associated with the specified prospect. <code>prospect_email</code>must correspond to an existing prospect. <strong><em>Note:</em></strong> If both <code>prospect_email</code>and <code>prospect_id</code>are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>prospect_id</code></td>
 <td><code>integer</code></td>
-<td>Selects opportunities associated with the specified prospect. <code>prospect_id</code> must correspond to an existing prospect. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Selects opportunities associated with the specified prospect. <code>prospect_id</code>must correspond to an existing prospect. <strong><em>Note:</em></strong> If both <code>prospect_email</code>and <code>prospect_id</code>are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 <td></td>
 </tr>
 <tr>
@@ -340,13 +340,13 @@
 <td><code>limit</code></td>
 <td><code>integer</code></td>
 <td></td>
-<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code>. <strong><em>Note:</em></strong> This number cannot be larger than 200.</td>
+<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code> <strong><em>Note:</em></strong> This number cannot be larger than 200.</td>
 </tr>
 <tr>
 <td><code>offset</code></td>
 <td><code>integer</code></td>
 <td></td>
-<td>Specifies the first matching opportunity (according to the specified sorting order) to be returned in the query response. The first <code>offset</code> matching opportunities will be omitted from the response. <em>Default value:</em> <code>0</code>. <strong><em>Example:</em></strong> Specifying <code>offset=400</code> will return the results starting with the 401st opportunity matched by the provided criteria.</td>
+<td>Specifies the first matching opportunity (according to the specified sorting order) to be returned in the query response. The first <code>offset</code>matching opportunities will be omitted from the response. <em>Default value:</em> <code>0</code> <strong><em>Example:</em></strong> Specifying <code>offset=400</code>will return the results starting with the 401st opportunity matched by the provided criteria.</td>
 </tr>
 <tr>
 <td><code>output</code></td>
@@ -358,13 +358,13 @@
 <td><code>sort_by</code></td>
 <td><code>string</code></td>
 <td><code>created_at, id, probability, value</code></td>
-<td>Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14770-supported-sorting-options) for more details. <em>Default value:</em> <code>id</code>.</td>
+<td>Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14770-supported-sorting-options) for more details. <em>Default value:</em> <code>id</code></td>
 </tr>
 <tr>
 <td><code>sort_order</code></td>
 <td><code>string</code></td>
 <td><code>ascending, descending</code></td>
-<td>Specifies the ordering to be used when sorting the results of the query. The default sorting order varies based on the value of the <code>sort_by</code> parameter. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details.</td>
+<td>Specifies the ordering to be used when sorting the results of the query. The default sorting order varies based on the value of the <code>sort_by</code>parameter. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details.</td>
 </tr>
 </tbody>
 </table>
@@ -382,22 +382,22 @@
 <tr>
 <td><code>created_at</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the opportunities' <code>created_at</code> timestamps.</td>
+<td>Specifies that the query results should be sorted by the opportunities' <code>created_at</code>timestamps.</td>
 </tr>
 <tr>
 <td><code>id</code></td>
 <td><code>ascending</code></td>
-<td>Specifies that the query results should be sorted by the opportunities' <code>id</code> fields.</td>
+<td>Specifies that the query results should be sorted by the opportunities' <code>id</code>fields.</td>
 </tr>
 <tr>
 <td><code>probability</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the opportunities' <code>probability</code> fields.</td>
+<td>Specifies that the query results should be sorted by the opportunities' <code>probability</code>fields.</td>
 </tr>
 <tr>
 <td><code>value</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the opportunities' <code>value</code> fields.</td>
+<td>Specifies that the query results should be sorted by the opportunities' <code>value</code>fields.</td>
 </tr>
 </tbody>
 </table>
@@ -429,7 +429,7 @@
 </tr>
 <tr>
 <td><code>&lt;opportunity&gt;</code></td>
-<td>The data for an individual Opportunity. See <a href="../opportunities">Using Opportunities</a> for complete descriptions of opportunity <a href="../opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../object-field-references#opportunity">Opportunity</a> in <a href="../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning an opportunity's activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request for individual opportunities of interest.</td>
+<td>The data for an individual Opportunity. See <a href="../opportunities">Using Opportunities</a> for complete descriptions of opportunity <a href="../opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../object-field-references#opportunity">Opportunity</a> in <a href="../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning an opportunity's activities will NOT be included in a <code>query</code>response. To retrieve this data, use a <code>read</code>request for individual opportunities of interest.</td>
 </tr>
 </tbody>
 </table>
@@ -451,37 +451,37 @@
 <td><code>create</code></td>
 <td><code>/api/opportunity /version/3/do/create /prospect_email /&lt;prospect_email&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_email, name, value, probability</code></td>
-<td>Creates a new opportunity using the specified data. <code>prospect_email</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../object-field-references#opportunity">Opportunity</a> in <a href="../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Creates a new opportunity using the specified data. <code>prospect_email</code>must correspond to an existing prospect. <code>name</code> <code>value</code> and <code>probability</code>must also be specified. See <a href="../object-field-references#opportunity">Opportunity</a> in <a href="../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code>and <code>prospect_id</code>are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
 <td><code>/api/opportunity /version/3/do/create /prospect_id /&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_id, name, value, probability</code></td>
-<td>Creates a new opportunity using the specified data. <code>prospect_id</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../object-field-references#opportunity">Opportunity</a> in <a href="../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Creates a new opportunity using the specified data. <code>prospect_id</code>must correspond to an existing prospect. <code>name</code> <code>value</code> and <code>probability</code>must also be specified. See <a href="../object-field-references#opportunity">Opportunity</a> in <a href="../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code>and <code>prospect_id</code>are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
 <td><code>/api/opportunity /version/3/do/read /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Returns the data for the opportunity specified by <code>id</code>, including campaign assignment and associated visitor activities. <code>id</code> is the Pardot ID for the target opportunity.</td>
+<td>Returns the data for the opportunity specified by <code>id</code> including campaign assignment and associated visitor activities. <code>id</code>is the Pardot ID for the target opportunity.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/opportunity /version/3/do/update /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Updates the provided data for the opportunity specified by <code>id</code>. <code>id</code> is the Pardot ID for the target opportunity. Fields that are not updated by the request remain unchanged. Returns an updated version of the opportunity.</td>
+<td>Updates the provided data for the opportunity specified by <code>id</code> <code>id</code>is the Pardot ID for the target opportunity. Fields that are not updated by the request remain unchanged. Returns an updated version of the opportunity.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/opportunity /version/3/do/delete /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Deletes the opportunity specified by <code>id</code>. <code>id</code> is the Pardot ID for the target opportunity. Returns no response on success. <strong><em>Note:</em></strong> Deleting an opportunity, whether via the API or within Pardot, will not delete the Visitor Activities or Score changes for the Prospect to whom the Opportunity is linked.</td>
+<td>Deletes the opportunity specified by <code>id</code> <code>id</code>is the Pardot ID for the target opportunity. Returns no response on success. <strong><em>Note:</em></strong> Deleting an opportunity, whether via the API or within Pardot, will not delete the Visitor Activities or Score changes for the Prospect to whom the Opportunity is linked.</td>
 </tr>
 <tr>
 <td><code>undelete</code></td>
 <td><code>/api/opportunity /version/3/do/undelete /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Undeletes the opportunity specified by <code>id</code>. <code>id</code> is the Pardot ID for the target opportunity. Returns no response on success.</td>
+<td>Undeletes the opportunity specified by <code>id</code> <code>id</code>is the Pardot ID for the target opportunity. Returns no response on success.</td>
 </tr>
 </tbody>
 </table>
@@ -546,15 +546,15 @@
 </tr>
 <tr>
 <td><code>&lt;campaign&gt;</code></td>
-<td>Contains <code>&lt;id&gt;</code> and <code>&lt;name&gt;</code> of the campaign to which this opportunity has been assigned.</td>
+<td>Contains <code>&lt;id&gt;</code>and <code>&lt;name&gt;</code>of the campaign to which this opportunity has been assigned.</td>
 </tr>
 <tr>
 <td><code>&lt;prospects&gt;</code></td>
-<td>Contains all prospects associated with this opportunity. Contains only <code>&lt;prospect&gt;</code> tags.</td>
+<td>Contains all prospects associated with this opportunity. Contains only <code>&lt;prospect&gt;</code>tags.</td>
 </tr>
 <tr>
 <td><code>&lt;opportunity_activities&gt;</code></td>
-<td>Contains all visitor activities associated with this opportunity. Contains only <code>&lt;visitor_activity&gt;</code> tags.</td>
+<td>Contains all visitor activities associated with this opportunity. Contains only <code>&lt;visitor_activity&gt;</code>tags.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor_activity&gt;</code></td>

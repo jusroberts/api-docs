@@ -288,19 +288,19 @@
 <td><code>assigned_to_user</code></td>
 <td><code>integer/string</code></td>
 <td><code>&lt;any_positive_integer&gt;, &lt;any_string&gt;</code></td>
-<td>Selects prospects based on whether they are assigned to a specified user. Users can be specified by their email address or their Pardot IDs.Note: Using <code>assigned_to_user</code> overrides the <code>assigned</code> criteria.</td>
+<td>Selects prospects based on whether they are assigned to a specified user. Users can be specified by their email address or their Pardot IDs.Note: Using <code>assigned_to_user</code>overrides the <code>assigned</code>criteria.</td>
 </tr>
 <tr>
 <td><code>created_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that were created after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
+<td>Selects prospects that were created after the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
 </tr>
 <tr>
 <td><code>created_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that were created before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
+<td>Selects prospects that were created before the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
 </tr>
 <tr>
 <td><code>deleted</code></td>
@@ -312,19 +312,19 @@
 <td><code>grade_equal_to</code></td>
 <td><code>string</code></td>
 <td><code>A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F</code></td>
-<td>Selects prospects that have a grade equal to the specified grade. Note: Any value provided for <code>grade_equal_to</code> MUST be URL-encoded.</td>
+<td>Selects prospects that have a grade equal to the specified grade. Note: Any value provided for <code>grade_equal_to</code>MUST be URL-encoded.</td>
 </tr>
 <tr>
 <td><code>grade_greater_than</code></td>
 <td><code>string</code></td>
 <td><code>A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F</code></td>
-<td>Selects prospects that have a grade greater than the specified grade. Note: Any value provided for <code>grade_greater_than</code> MUST be URL-encoded.</td>
+<td>Selects prospects that have a grade greater than the specified grade. Note: Any value provided for <code>grade_greater_than</code>MUST be URL-encoded.</td>
 </tr>
 <tr>
 <td><code>grade_less_than</code></td>
 <td><code>string</code></td>
 <td><code>A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F</code></td>
-<td>Selects prospects that have a grade less than the specified grade. Note: Any value provided for <code>grade_less_than</code> MUST be URL-encoded.</td>
+<td>Selects prospects that have a grade less than the specified grade. Note: Any value provided for <code>grade_less_than</code>MUST be URL-encoded.</td>
 </tr>
 <tr>
 <td><code>id_greater_than</code></td>
@@ -348,31 +348,31 @@
 <td><code>last_activity_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that have been active before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code> is before the specified time. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Selects prospects that have been active before the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code>is before the specified time. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>last_activity_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that have been active after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code> is after the specified time. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Selects prospects that have been active after the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's <code>last_activity_at</code>is after the specified time. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>last_activity_never</code></td>
 <td><code>boolean</code></td>
 <td><code>TRUE</code></td>
-<td>Selects prospects that have never been active. Prospects are considered active if a prospect's <code>last_activity_at</code> is null. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Selects prospects that have never been active. Prospects are considered active if a prospect's <code>last_activity_at</code>is null. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>list_id</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any positive integer&gt;</code></td>
-<td>Selects prospects based on their membership of the list with the given <code>list_id</code>.</td>
+<td>Selects prospects based on their membership of the list with the given <code>list_id</code></td>
 </tr>
 <tr>
 <td><code>new</code></td>
 <td><code>boolean</code></td>
 <td><code>true, false</code></td>
-<td>Selects prospects based on whether they are classified as new. Prospects are considered new if they have not been assigned to a user or a queue, have not been marked as reviewed, and have a <code>last_activity_at</code> timestamp specified. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>. Note: Using the new criteria overrides the <code>assigned</code>, <code>assigned_to_user</code>, <code>last_activity_at</code>, and <code>last_activity_before</code> criteria if specified.</td>
+<td>Selects prospects based on whether they are classified as new. Prospects are considered new if they have not been assigned to a user or a queue, have not been marked as reviewed, and have a <code>last_activity_at</code>timestamp specified. See <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>. Note: Using the new criteria overrides the <code>assigned</code> <code>assigned_to_user</code> <code>last_activity_at</code> and <code>last_activity_before</code>criteria if specified.</td>
 </tr>
 <tr>
 <td><code>score_equal_to</code></td>
@@ -396,13 +396,13 @@
 <td><code>updated_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that were last updated after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
+<td>Selects prospects that were last updated after the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
 </tr>
 <tr>
 <td><code>updated_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Selects prospects that were last updated before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
+<td>Selects prospects that were last updated before the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using GNU Date Input Syntax.</td>
 </tr>
 </tbody>
 </table>
@@ -428,13 +428,13 @@
 <td><code>limit</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code>. <strong><em>Note:</em></strong> This number cannot be larger than 200.</td>
+<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code> <strong><em>Note:</em></strong> This number cannot be larger than 200.</td>
 </tr>
 <tr>
 <td><code>offset</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Specifies the first matching prospect(according to the specified sorting order) to be returned in the query response. The first <code>offset</code> matching prospects will be omitted from the response. <em>Default value:</em> <code>0</code>. <strong><em>Example:</em></strong> Specifying <code>offset=400</code> will return the results starting with the 401st prospect matched by the provided criteria.</td>
+<td>Specifies the first matching prospect(according to the specified sorting order) to be returned in the query response. The first <code>offset</code>matching prospects will be omitted from the response. <em>Default value:</em> <code>0</code> <strong><em>Example:</em></strong> Specifying <code>offset=400</code>will return the results starting with the 401st prospect matched by the provided criteria.</td>
 </tr>
 <tr>
 <td><code>output</code></td>
@@ -446,13 +446,13 @@
 <td><code>sort_by</code></td>
 <td><code>string</code></td>
 <td><code>created_at, id, probability, value</code></td>
-<td>Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14784-supported-sorting-options) for more details. <em>Default value:</em> <code>id</code>.</td>
+<td>Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14784-supported-sorting-options) for more details. <em>Default value:</em> <code>id</code></td>
 </tr>
 <tr>
 <td><code>sort_order</code></td>
 <td><code>string</code></td>
 <td><code>ascending, descending</code></td>
-<td>Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the <code>sort_by</code> parameter. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details.</td>
+<td>Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the <code>sort_by</code>parameter. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details.</td>
 </tr>
 </tbody>
 </table>
@@ -470,22 +470,22 @@
 <tr>
 <td><code>created_at</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the prospects' <code>created_at</code> timestamps.</td>
+<td>Specifies that the query results should be sorted by the prospects' <code>created_at</code>timestamps.</td>
 </tr>
 <tr>
 <td><code>id</code></td>
 <td><code>ascending</code></td>
-<td>Specifies that the query results should be sorted by the prospects' <code>id</code> fields.</td>
+<td>Specifies that the query results should be sorted by the prospects' <code>id</code>fields.</td>
 </tr>
 <tr>
 <td><code>last_activity_at</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the prospects' <code>last_activity_at</code> timestamps.</td>
+<td>Specifies that the query results should be sorted by the prospects' <code>last_activity_at</code>timestamps.</td>
 </tr>
 <tr>
 <td><code>updated_at</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the prospects' <code>updated_at</code> timestamps.</td>
+<td>Specifies that the query results should be sorted by the prospects' <code>updated_at</code>timestamps.</td>
 </tr>
 </tbody>
 </table>
@@ -517,7 +517,7 @@
 </tr>
 <tr>
 <td><code>&lt;prospect&gt;</code></td>
-<td>The data for an individual Prospect. See <a href="../using-prospects">Using Prospects</a> for complete descriptions of prospect <a href="../using-prospects#xml-response-formats">XML Response Formats</a>. Also see <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a <code>query</code> response. To retrieve this data, submit a <code>read</code> request for the prospect of interest.</td>
+<td>The data for an individual Prospect. See <a href="../using-prospects">Using Prospects</a> for complete descriptions of prospect <a href="../using-prospects#xml-response-formats">XML Response Formats</a>. Also see <a href="../object-field-references#prospect">Prospect</a> in <a href="../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a <code>query</code>response. To retrieve this data, submit a <code>read</code>request for the prospect of interest.</td>
 </tr>
 </tbody>
 </table>
@@ -539,97 +539,97 @@
 <td><code>assign</code></td>
 <td><code>/api/prospect /version/3 /do/assign/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email, (user_email OR user_id OR group_id)</code></td>
-<td>Assigns or reassigns the prospect specified by <code>&lt;email&gt;</code> to a specified Pardot user or group. One (and only one) of the following parameters must be provided to identify the target user or group: <code>&lt;user_email&gt;</code>, <code>&lt;user_id&gt;</code>, or <code>&lt;group_id&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
+<td>Assigns or reassigns the prospect specified by <code>&lt;email&gt;</code>to a specified Pardot user or group. One (and only one) of the following parameters must be provided to identify the target user or group: <code>&lt;user_email&gt;</code> <code>&lt;user_id&gt;</code> or <code>&lt;group_id&gt;</code> Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>assign</code></td>
 <td><code>/api/prospect /version/3 /do/assign/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id, (user_email OR user_id OR group_id)</code></td>
-<td>Assigns or reassigns the prospect specified by <code>&lt;id&gt;</code> to a specified Pardot user or group. One (and only one) of the following parameters must be provided to identify the target user or group: <code>&lt;user_email&gt;</code>, <code>&lt;user_id&gt;</code>, or <code>&lt;group_id&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
+<td>Assigns or reassigns the prospect specified by <code>&lt;id&gt;</code>to a specified Pardot user or group. One (and only one) of the following parameters must be provided to identify the target user or group: <code>&lt;user_email&gt;</code> <code>&lt;user_id&gt;</code> or <code>&lt;group_id&gt;</code> Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>unassign</code></td>
 <td><code>/api/prospect /version/3 /do/unassign/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
-<td>Unassigns the prospect specified by <code>&lt;email&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong>Prospect assignments and reassignments do not overwrite existing assignments in CRMs. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
+<td>Unassigns the prospect specified by <code>&lt;email&gt;</code> Returns an updated version of the prospect. <strong><em>Note:</em></strong>Prospect assignments and reassignments do not overwrite existing assignments in CRMs. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>unassign</code></td>
 <td><code>/api/prospect /version/3 /do/unassign/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Unassigns the prospect specified by <code>&lt;id&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
+<td>Unassigns the prospect specified by <code>&lt;id&gt;</code> Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
 <td><code>/api/prospect /version/3 /do/create/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
-<td>Creates a new prospect using the specified data. <code>&lt;email&gt;</code> must be a unique email address. Email list subscriptions and custom field data may also be added with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details.</td>
+<td>Creates a new prospect using the specified data. <code>&lt;email&gt;</code>must be a unique email address. Email list subscriptions and custom field data may also be added with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details.</td>
 </tr>
 <tr>
 <td><code>batchCreate</code></td>
 <td><code>/api/prospect /version/3 /do/batchCreate? prospects=&lt;data&gt;...</code></td>
 <td><code>user_key, api_key, prospects</code></td>
-<td>Creates new prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
+<td>Creates new prospects using the provided <code>&lt;data&gt;</code>in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
 </tr>
 <tr>
 <td><code>read</code></td>
 <td><code>/api/prospect /version/3 /do/read/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
-<td>Returns data for the prospect specified by <code>&lt;email&gt;</code>, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `` is the email address of the target prospect.</td>
+<td>Returns data for the prospect specified by <code>&lt;email&gt;</code> including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. <code>&lt;email&gt;</code>is the email address of the target prospect.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
 <td><code>/api/prospect /version/3 /do/read/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Returns data for the prospect specified by <code>&lt;id&gt;</code>, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `` is the Pardot ID of the target prospect.</td>
+<td>Returns data for the prospect specified by <code>&lt;id&gt;</code> including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. <code>&lt;id&gt;</code>is the Pardot ID of the target prospect.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/prospect /version/3 /do/update/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
-<td>Updates the provided data for a prospect specified by <code>&lt;email&gt;</code>. <code>&lt;email&gt;</code> is the email address of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect email addresses cannot be updated using this method.</td>
+<td>Updates the provided data for a prospect specified by <code>&lt;email&gt;</code> <code>&lt;email&gt;</code>is the email address of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect email addresses cannot be updated using this method.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/prospect /version/3 /do/update/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Updates the provided data for a prospect specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
+<td>Updates the provided data for a prospect specified by <code>&lt;id&gt;</code> <code>&lt;id&gt;</code>is the Pardot ID of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
 </tr>
 <tr>
 <td><code>batchUpdate</code></td>
 <td><code>/api/prospect /version/3 /do/batchUpdate? prospects=&lt;data&gt;...</code></td>
 <td><code>user_key, api_key, prospects</code></td>
-<td>Updates prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
+<td>Updates prospects using the provided <code>&lt;data&gt;</code>in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
 </tr>
 <tr>
 <td><code>upsert</code></td>
 <td><code>/api/prospect /version/3 /do/upsert/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
-<td>Updates the provided data for the prospect specified by <code>&lt;email&gt;</code>. If a prospect with the provided email address does not yet exist, a new prospect is created using the <code>&lt;email&gt;</code> value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#14833-updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
+<td>Updates the provided data for the prospect specified by <code>&lt;email&gt;</code> If a prospect with the provided email address does not yet exist, a new prospect is created using the <code>&lt;email&gt;</code>value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#14833-updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
 </tr>
 <tr>
 <td><code>upsert</code></td>
 <td><code>/api/prospect /version/3 /do/upsert/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, (id OR email)</code></td>
-<td>Updates the provided data for the prospect specified by <code>&lt;id&gt;</code>. If an <code>&lt;email&gt;</code> value is provided, it is used to update the prospect's email address. If a prospect with the provided ID is not found, Pardot searches for a prospect identified by <code>&lt;email&gt;</code>. If a prospect with the provided email address does not yet exist, a new prospect is created using <code>&lt;email&gt;</code> value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
+<td>Updates the provided data for the prospect specified by <code>&lt;id&gt;</code> If an <code>&lt;email&gt;</code>value is provided, it is used to update the prospect's email address. If a prospect with the provided ID is not found, Pardot searches for a prospect identified by <code>&lt;email&gt;</code> If a prospect with the provided email address does not yet exist, a new prospect is created using <code>&lt;email&gt;</code>value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
 </tr>
 <tr>
 <td><code>batchUpsert</code></td>
 <td><code>/api/prospect /version/3 /do/batchUpsert? prospects=&lt;data&gt;...</code></td>
 <td><code>user_key, api_key, prospects</code></td>
-<td>Updates prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
+<td>Updates prospects using the provided <code>&lt;data&gt;</code>in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/prospect /version/3 /do/delete/ email/&lt;email&gt;?...</code></td>
 <td><code>user_key, api_key, email</code></td>
-<td>Deletes the prospect specified by <code>&lt;email&gt;</code>. Returns HTTP 204 No Content on success. <strong><em>Note:</em></strong> Prospects may only be deleted using HTTP methods POST or DELETE.</td>
+<td>Deletes the prospect specified by <code>&lt;email&gt;</code> Returns HTTP 204 No Content on success. <strong><em>Note:</em></strong> Prospects may only be deleted using HTTP methods POST or DELETE.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/prospect /version/3 /do/delete/ id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Deletes the prospect specified by <code>&lt;id&gt;</code>. Returns HTTP 204 No Content on success. <strong><em>Note:</em></strong> Prospects may only be deleted using HTTP methods POST or DELETE.</td>
+<td>Deletes the prospect specified by <code>&lt;id&gt;</code> Returns HTTP 204 No Content on success. <strong><em>Note:</em></strong> Prospects may only be deleted using HTTP methods POST or DELETE.</td>
 </tr>
 </tbody>
 </table>
@@ -729,19 +729,19 @@
 </tr>
 <tr>
 <td><code>&lt;campaign&gt;</code></td>
-<td>Contains <code>&lt;id&gt;</code> and <code>&lt;name&gt;</code> of the campaign to which this prospect has been assigned. This leaf only appears if the prospect has been assigned to a campaign.</td>
+<td>Contains <code>&lt;id&gt;</code>and <code>&lt;name&gt;</code>of the campaign to which this prospect has been assigned. This leaf only appears if the prospect has been assigned to a campaign.</td>
 </tr>
 <tr>
 <td><code>&lt;assigned_to&gt;</code></td>
-<td>Contains a <code>&lt;user&gt;</code> node detailing the user to whom this prospect has been assigned. This leaf only appears if the prospect has been assigned to a user. See <a href="../object-field-references#user">User</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Contains a <code>&lt;user&gt;</code>node detailing the user to whom this prospect has been assigned. This leaf only appears if the prospect has been assigned to a user. See <a href="../object-field-references#user">User</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;last_activity&gt;</code></td>
-<td>Contains a <code>&lt;visitor_activity&gt;</code> node detailing this prospect's most recent activity. This leaf only appears if the prospect has visitor activities associated with it. For complete field listing, see <a href="../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Contains a <code>&lt;visitor_activity&gt;</code>node detailing this prospect's most recent activity. This leaf only appears if the prospect has visitor activities associated with it. For complete field listing, see <a href="../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;profile&gt;</code></td>
-<td>Contains all data fields for the profile associated with this prospect. Also contains several <code>&lt;profile_criteria&gt;</code> tags. For complete field listing, see <a href="../object-field-references#profile">Profile</a> in <a href="../object-field-references">Object Field References.</a></td>
+<td>Contains all data fields for the profile associated with this prospect. Also contains several <code>&lt;profile_criteria&gt;</code>tags. For complete field listing, see <a href="../object-field-references#profile">Profile</a> in <a href="../object-field-references">Object Field References.</a></td>
 </tr>
 <tr>
 <td><code>&lt;profile_criteria&gt;</code></td>
@@ -749,11 +749,11 @@
 </tr>
 <tr>
 <td><code>&lt;visitors&gt;</code></td>
-<td>Contains all visitors associated with this prospect. Contains only <code>&lt;visitor&gt;</code> tags.</td>
+<td>Contains all visitors associated with this prospect. Contains only <code>&lt;visitor&gt;</code>tags.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor&gt;</code></td>
-<td>Contains data fields for a visitor activity, as well as an <code>&lt;identified_company&gt;</code> and a <code>&lt;visitor_referrer&gt;</code> tag. For complete field listing, see <a href="../object-field-references#visitor">Visitor</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor activity, as well as an <code>&lt;identified_company&gt;</code>and a <code>&lt;visitor_referrer&gt;</code>tag. For complete field listing, see <a href="../object-field-references#visitor">Visitor</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;identified_company&gt;</code></td>
@@ -765,7 +765,7 @@
 </tr>
 <tr>
 <td><code>&lt;visitor_activities&gt;</code></td>
-<td>Contains all visitor activities associated with this prospect. Contains only <code>&lt;visitor_activity&gt;</code> tags.</td>
+<td>Contains all visitor activities associated with this prospect. Contains only <code>&lt;visitor_activity&gt;</code>tags.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor_activity&gt;</code></td>
@@ -773,11 +773,11 @@
 </tr>
 <tr>
 <td><code>&lt;lists&gt;</code></td>
-<td>Contains all email list subscriptions for this prospect. Contains only <code>&lt;list_subscription&gt;</code> tags.</td>
+<td>Contains all email list subscriptions for this prospect. Contains only <code>&lt;list_subscription&gt;</code>tags.</td>
 </tr>
 <tr>
 <td><code>&lt;list_subscription&gt;</code></td>
-<td>Contains data fields for an email list subscription, as well as a <code>&lt;list&gt;</code> tag. For complete field listing, see <a href="../object-field-references#email-list-subscription">Email List Subscription</a> in <a href="../object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for an email list subscription, as well as a <code>&lt;list&gt;</code>tag. For complete field listing, see <a href="../object-field-references#email-list-subscription">Email List Subscription</a> in <a href="../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;list&gt;</code></td>
@@ -819,7 +819,7 @@
             &quot;first_name&quot;: &quot;New first name&quot;,
             &quot;last_name&quot;: &quot;New last name&quot;
         },
-            &quot;some.other@email.com&quot;: {
+        &quot;some.other@email.com&quot;: {
             &quot;first_name&quot;: &quot;New first name&quot;,
             &quot;last_name&quot;: &quot;New last name&quot;
         }

@@ -264,19 +264,19 @@
 <td><code>created_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Searches for list memberships that were created after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+<td>Searches for list memberships that were created after the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
 </tr>
 <tr>
 <td><code>created_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Searches for list memberships that were created before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+<td>Searches for list memberships that were created before the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
 </tr>
 <tr>
 <td><code>deleted</code></td>
 <td><code>string</code></td>
 <td><code>true, false</code></td>
-<td>Searches for list memberships based on whether they have been deleted. <em>Default value:</em> <code>false</code>.</td>
+<td>Searches for list memberships based on whether they have been deleted. <em>Default value:</em> <code>false</code></td>
 </tr>
 <tr>
 <td><code>id_greater_than</code></td>
@@ -294,19 +294,19 @@
 <td><code>list_id</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any_list_id&gt;</code></td>
-<td>Searches for list memberships that have this <code>&lt;list_id&gt;</code>. <code>&lt;list_id&gt;</code> is the Pardot list ID.</td>
+<td>Searches for list memberships that have this <code>&lt;list_id&gt;</code> <code>&lt;list_id&gt;</code>is the Pardot list ID.</td>
 </tr>
 <tr>
 <td><code>updated_before</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Searches for list memberships that were updated before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+<td>Searches for list memberships that were updated before the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
 </tr>
 <tr>
 <td><code>updated_after</code></td>
 <td><code>string</code></td>
 <td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
-<td>Searches for list memberships that were updated after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+<td>Searches for list memberships that were updated after the specified time. If a <code>&lt;custom_time&gt;</code>is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -326,25 +326,25 @@
 <td><code>limit</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code>. <strong><em>Note:</em></strong> This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used.</td>
+<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code> <strong><em>Note:</em></strong> This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used.</td>
 </tr>
 <tr>
 <td><code>offset</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Specifies the first matching list membership(according to the specified sorting order) to be returned in the <code>query</code> response. The first <code>offset</code> matching list memberships will be omitted from the response. <em>Default value:</em> <code>0</code>. <strong><em>Example:</em></strong> Specifying <code>offset=10</code> will return the results starting with the 11th list membership matched by the provided criteria.</td>
+<td>Specifies the first matching list membership(according to the specified sorting order) to be returned in the <code>query</code>response. The first <code>offset</code>matching list memberships will be omitted from the response. <em>Default value:</em> <code>0</code> <strong><em>Example:</em></strong> Specifying <code>offset=10</code>will return the results starting with the 11th list membership matched by the provided criteria.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
 <td><code>string</code></td>
 <td><code>created_at, id</code></td>
-<td>Specifies the field that should be used to sort the results of the query. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details. <em>Default value:</em> <code>id</code>.</td>
+<td>Specifies the field that should be used to sort the results of the query. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details. <em>Default value:</em> <code>id</code></td>
 </tr>
 <tr>
 <td><code>sort_order</code></td>
 <td><code>string</code></td>
 <td><code>ascending, descending</code></td>
-<td>Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the <code>sort_by</code> parameter. See <a href="#supported-sorting-options">Supporting Sorting Options</a> for more details.</td>
+<td>Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the <code>sort_by</code>parameter. See <a href="#supported-sorting-options">Supporting Sorting Options</a> for more details.</td>
 </tr>
 </tbody>
 </table>
@@ -362,12 +362,12 @@
 <tr>
 <td><code>created_at</code></td>
 <td><code>descending</code></td>
-<td>Specifies that the query results should be sorted by the list memberships' <code>created_at</code> timestamps.</td>
+<td>Specifies that the query results should be sorted by the list memberships' <code>created_at</code>timestamps.</td>
 </tr>
 <tr>
 <td><code>id</code></td>
 <td><code>ascending</code></td>
-<td>Specifies that the query results should be sorted by the list memberships' <code>id</code> fields.</td>
+<td>Specifies that the query results should be sorted by the list memberships' <code>id</code>fields.</td>
 </tr>
 </tbody>
 </table>
@@ -421,43 +421,43 @@
 <td><code>read</code></td>
 <td><code>/api/listMembership/version /3/do/read/id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Returns the data for the list membership specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target list membership.</td>
+<td>Returns the data for the list membership specified by <code>&lt;id&gt;</code> <code>&lt;id&gt;</code>is the Pardot ID of the target list membership.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
 <td><code>/api/listMembership/version /3/do/read/list_id/&lt;list_id&gt;/ prospect_id/&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, list_id, prospect_id</code></td>
-<td>Returns the data for the list membership specified by <code>&lt;list_id&gt;</code> and <code>&lt;prospect_id&gt;</code>. <code>&lt;list_id&gt;</code> is the Pardot list ID of the list and <code>&lt;prospect_id&gt;</code> is the Pardot prospect ID of the prospect for the target list membership.</td>
+<td>Returns the data for the list membership specified by <code>&lt;list_id&gt;</code>and <code>&lt;prospect_id&gt;</code> <code>&lt;list_id&gt;</code>is the Pardot list ID of the list and <code>&lt;prospect_id&gt;</code>is the Pardot prospect ID of the prospect for the target list membership.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
 <td><code>/api/listMembership/version /3/do/create/list_id/&lt;list_id&gt;/ prospect_id/&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, list_id, prospect_id</code></td>
-<td>Creates a new list membership using the specified data. <code>&lt;list_id&gt;</code> is the Pardot list ID of the target list and <code>&lt;prospect_id&gt;</code> is the Pardot prospect ID of the target prospect. Opting out prospect from list may also be added with this request.</td>
+<td>Creates a new list membership using the specified data. <code>&lt;list_id&gt;</code>is the Pardot list ID of the target list and <code>&lt;prospect_id&gt;</code>is the Pardot prospect ID of the target prospect. Opting out prospect from list may also be added with this request.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/listMembership/version /3/do/update/id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Updates the provided data for a list membership specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target list membership. Fields that are not updated by the request remain unchanged.</td>
+<td>Updates the provided data for a list membership specified by <code>&lt;id&gt;</code> <code>&lt;id&gt;</code>is the Pardot ID of the target list membership. Fields that are not updated by the request remain unchanged.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/listMembership/version /3/do/update/list_id/&lt;list_id&gt;/ prospect_id/&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, list_id, prospect_id</code></td>
-<td>Updates the provided data for a list membership specified by <code>&lt;list_id&gt;</code> and <code>&lt;prospect_id&gt;</code>. <code>&lt;list_id&gt;</code> is the Pardot list ID of the list and <code>&lt;prospect_id&gt;</code> is the Pardot prospect ID of the prospect for the target list membership. Fields that are not updated by the request remain unchanged.</td>
+<td>Updates the provided data for a list membership specified by <code>&lt;list_id&gt;</code>and <code>&lt;prospect_id&gt;</code> <code>&lt;list_id&gt;</code>is the Pardot list ID of the list and <code>&lt;prospect_id&gt;</code>is the Pardot prospect ID of the prospect for the target list membership. Fields that are not updated by the request remain unchanged.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/listMembership/version /3/do/delete/id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
-<td>Deletes the list membership specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target list membership. Returns HTTP 204 No Content on success.</td>
+<td>Deletes the list membership specified by <code>&lt;id&gt;</code> <code>&lt;id&gt;</code>is the Pardot ID of the target list membership. Returns HTTP 204 No Content on success.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/listMembership/version /3/do/delete/list_id/&lt;list_id&gt;/ prospect_id/&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, list_id, prospect_id</code></td>
-<td>Deletes the list membership specified by <code>&lt;list_id&gt;</code> and <code>&lt;prospect_id&gt;</code>. <code>&lt;list_id&gt;</code> is the Pardot list ID of the list and <code>&lt;prospect_id&gt;</code> is the Pardot prospect ID of the prospect for the target list membership. Returns HTTP 204 No Content on success.</td>
+<td>Deletes the list membership specified by <code>&lt;list_id&gt;</code>and <code>&lt;prospect_id&gt;</code> <code>&lt;list_id&gt;</code>is the Pardot list ID of the list and <code>&lt;prospect_id&gt;</code>is the Pardot prospect ID of the prospect for the target list membership. Returns HTTP 204 No Content on success.</td>
 </tr>
 </tbody>
 </table>
